@@ -7,7 +7,7 @@ public class ReverseNumber {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter any number:");
         n = sc.nextInt();
-        int dig=0;
+        int dig;
 
         while (n > 0) {
          dig  = n % 10;

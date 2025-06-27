@@ -1,7 +1,7 @@
 public class countingDigit {
     public static void main(String[] args) {
         int num = 342;
-        int dig = 0;
+        int dig=0;
 
         while (num != 0) {
 
