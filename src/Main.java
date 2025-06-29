@@ -1,19 +1,16 @@
 import java.util.Scanner;
-public class Main{
+public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int Num1 = s.nextInt();
-        int Num2 = s.nextInt();
-        int n1= Num1;
-        int n2= Num2;
-        while(Num1%Num2!=0){
-            int rem = Num1%Num2;
-            Num1=Num2;
-            Num2=rem;
+        int n = s.nextInt();
+        for (int i = 0; i < n; i++) {
+            int icj = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(icj+"\t");
+                int icjp1 = icj * (i-j)/(j+1);
+                icj=icjp1;
+            }
+            System.out.println();
         }
-        System.out.println(Num2);
-        int lcm = (n1*n2)/Num2;
-        System.out.println(lcm);
-
     }
 }
