@@ -11,7 +11,6 @@ public class FrequencyOfDigit {
 
     private static int frequencyOfDigit(int n, int d) {
         int rv=0;
-
         while (n>0){
             int dig=n%10;
             n/=10;
