@@ -24,3 +24,4 @@ public class SpanOfArray {
         System.out.println(span);
     }
 }
+
