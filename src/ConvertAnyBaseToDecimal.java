@@ -8,9 +8,8 @@ public class ConvertAnyBaseToDecimal {
         System.out.println(f);
     }
     public static int GaveValueInBase(int n,int b){
-        int v=0;
-
-        int p =1;
+        int v = 0;
+        int p = 1;
         while(n > 0){
             int dig = n % 10;
             n /= 10;
