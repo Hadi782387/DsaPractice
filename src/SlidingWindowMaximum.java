@@ -39,7 +39,7 @@ public class SlidingWindowMaximum {
         int j=0;
         for (int i=0;i<=arr.length-k;i++){
 
-            // if h is smaller than i j=i
+            // if j is smaller than i j=i
             if(j>i){
                 j=i;
             }
