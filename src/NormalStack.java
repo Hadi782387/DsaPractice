@@ -27,7 +27,7 @@ public class NormalStack {
             if (tos == data.length - 1) {
                 System.out.println("Stack overflow");
             } else {
-                tos++;
+                tos+=1;
                 data[tos] = val;
             }
         }

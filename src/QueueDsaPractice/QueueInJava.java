@@ -1,4 +1,5 @@
-public class NormalQueue {
+package QueueDsaPractice;
+public class QueueInJava {
     public static class CustomQueue {
         int[] data;
         int front;
@@ -68,9 +69,9 @@ public class NormalQueue {
 
         q.add(10);
         q.add(20);
-        q.add(30);
         q.add(40);
-        //q.add(50);
+        q.add(40);
+        q.add(50);
         q.display(); // 10 20 30 40 50
 
         q.remove(); // removes 10
