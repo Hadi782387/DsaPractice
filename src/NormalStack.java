@@ -17,7 +17,7 @@ public class NormalStack {
         // Displays all elements from top to bottom
         void display() {
             for (int i = tos; i >= 0; i--) {
-                System.out.println(data[i] + " ");
+                System.out.print(data[i] + " ");
             }
             System.out.println();
         }
