@@ -1,0 +1,1 @@
+these java folders contains java basic to advance logic building questions and solution
