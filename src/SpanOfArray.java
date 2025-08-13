@@ -11,12 +11,12 @@ public class SpanOfArray {
         }
         int max = arr[0];
         int min = arr[0];
-        for (int i =0;i<arr.length;i++){
-            if (arr[i]>max) {                //step 3 if i is greater than max
-                max=arr[i];
+        for (int j : arr) {
+            if (j > max) {                //step 3 if i is greater than max
+                max = j;
             }
-            if (arr[i]<min){                 //step 4: if i is smaller than min
-                min=arr[i];
+            if (j < min) {                 //step 4: if i is smaller than min
+                min = j;
             }
 
         }
