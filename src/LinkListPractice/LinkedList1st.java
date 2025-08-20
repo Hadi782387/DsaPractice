@@ -105,6 +105,93 @@ public class LinkedList1st {
             }
             size++;
         }
+        public void removeLast(){
+            if (size==0){
+                System.out.println("List is empty:");
+            } else if (size==1) {
+                head=tail=null;
+                size=0;
+            }else{
+               Node temp = head;
+                for (int i = 0;i<size-2;i++) temp = temp.next;
+                tail=temp;
+                temp.next=null;
+                size--;
+            }
+        }
+        private Node getNodeAt(int idx){
+            Node temp = head;
+            for (int i = 0 ;i<idx;i++){
+                temp=temp.next;
+            }
+            return temp;
+        }
+        public void reverseD1(){
+            int ri=size-1;
+            int li=0;
+            while (li<ri){
+                Node left = getNodeAt(li);
+                Node right = getNodeAt(ri);
+                int temp  = left.data;
+                left.data=right.data;
+                right.data=temp;
+                li++;
+                ri--;
+            }
+        }
+        public void reversePI(){
+            Node prev = null;
+            Node curr = head;
+
+            while (curr!=null){
+                Node next =  curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=next;
+            }
+            Node temp = head;
+            head = tail;
+            tail = temp;
+
+        }
+        public void addElementAtIndex(int idx,int val){
+            if (idx<0 || idx>size) System.out.println("invalid");
+            else if(idx==0) addFirst(val);
+            else if(idx==size) addLast(val);
+            else{
+                Node node = new Node();
+                node.data=val;
+                Node temp = head;
+                for (int i = 0;i<idx-1;i++) temp=temp.next;
+
+                node.next=temp.next;
+                temp.next=node;
+            }
+        }
+        public void removeAtIdx(int idx){
+            if (idx<0 || idx>=size) System.out.println("invalid args");
+            else if (idx==0) removeFirst();
+            else if(idx==size-1)removeLast();
+            else{
+                Node temp = head;
+                for (int i =0;i<idx-1;i++) temp=temp.next;
+                temp.next = temp.next.next;
+                size--;
+            }
+        }
+
+        public void returnKthElement(int k){
+            Node slow = head;
+            Node fast = head;
+            for(int i = 0;i<k;i++){
+                fast = fast.next;
+            }
+            while (fast != tail ){
+                slow = slow.next;
+                fast=fast.next;
+            }
+            System.out.print("the element of node at k is: "+slow.data);
+        }
     }
 
         public static void main(String[] args) {
@@ -124,7 +211,14 @@ public class LinkedList1st {
                 System.out.println("7. getLast");
                 System.out.println("8. getAt");
                 System.out.println("9. display");
-                System.out.println("10. quit");
+                System.out.println("10. removeLast");
+                System.out.println("11. reverse");
+                System.out.println("12. add Element at index");
+                System.out.println("13. reverse by pointer");
+                System.out.println("14. remove Element at index");
+                System.out.println("15. kth element from tail");
+                System.out.println("16. quit");
+
                 System.out.print("Enter your choice: ");
 
                 int choice = sc.nextInt();
@@ -172,6 +266,30 @@ public class LinkedList1st {
                         break;
 
                     case 10:
+                        linklist.removeLast();
+                        break;
+
+                    case 11:
+                        linklist.reverseD1();
+                        break;
+
+                    case 12:
+                        linklist.addElementAtIndex(2,20);
+                        break;
+
+                    case 13:
+                        linklist.reversePI();
+                        break;
+
+                    case 14:
+                        linklist.removeAtIdx(1);
+                        break;
+
+                    case 15:
+                        linklist.returnKthElement(1);
+                        break;
+
+                    case 16:
                         is_Running = false;
                         System.out.println("Exiting program...");
                         break;
